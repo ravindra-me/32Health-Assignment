@@ -40,6 +40,7 @@ function UserCard({
   const handleLike = () => {
     setLike((pre) => !pre);
   };
+
   return (
     <>
       <Card

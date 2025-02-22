@@ -55,6 +55,7 @@ function Users() {
         }
         return e;
       });
+
       dispatch({
         type: ActionKeys.SET_DATA,
         payload: { data: updateValues as User[] },
@@ -64,15 +65,19 @@ function Users() {
     } catch (error) {
       console.log("Validation failed:", error);
     }
-  }, []);
+  }, [userEditInfo]);
 
-  const handleDeleteUser = useCallback((id: number | string) => {
-    const updateValues = userData.data.filter((e) => e.id !== id);
-    dispatch({
-      type: ActionKeys.SET_DATA,
-      payload: { data: updateValues as User[] },
-    });
-  }, []);
+  const handleDeleteUser = useCallback(
+    (id: number | string) => {
+      const updateValues = userData.data.filter((e) => e.id !== id);
+
+      dispatch({
+        type: ActionKeys.SET_DATA,
+        payload: { data: updateValues as User[] },
+      });
+    },
+    [userData.data]
+  );
 
   return (
     <>
