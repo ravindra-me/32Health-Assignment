@@ -32,8 +32,9 @@ const EditUserProfile = ({ values, form }: any) => {
         rules={[
           { required: true, message: "Please enter your phone number" },
           {
-            pattern: /^[0-9]{10}$/,
-            message: "Please enter a valid 10-digit phone number",
+            pattern:
+              /^\+?([0-9]{1,3})?\s?([-\/\.]?\s?)?([0-9]{3,5})\s?([-\/\.]?\s?)?([0-9]{4,9})(\s?x?\s?([0-9]{1,5}))?$/,
+            message: "Please enter a valid  phone number",
           },
         ]}
       >

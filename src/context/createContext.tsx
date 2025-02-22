@@ -37,7 +37,7 @@ interface UsersContextType extends StateType {
 
 const UsersContext = createContext<UsersContextType>({
   ...defaultState,
-  dispatch: (_value) => {},
+  dispatch: () => {},
 });
 
 const reducer = (state: StateType, action: ActionType) => {
