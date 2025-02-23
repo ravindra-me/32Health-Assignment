@@ -119,7 +119,9 @@ function Users() {
             body: "modelBody",
           }}
           footer={[
-            <Button key={"cancel"}>Cancel</Button>,
+            <Button key={"cancel"} onClick={() => handleOpenModal(null)}>
+              Cancel
+            </Button>,
             <Button type="primary" key={"submit"} onClick={handleSubmit}>
               ok
             </Button>,
